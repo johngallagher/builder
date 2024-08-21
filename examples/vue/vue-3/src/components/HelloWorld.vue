@@ -1,6 +1,6 @@
 <template>
   <div class="hello-world">
-    <div class="text">Hello {{ text }}!</div>
+    <div v-html="fetchedHtml"></div>
     <slot></slot>
   </div>
 </template>
@@ -13,6 +13,21 @@ export default {
       default: 'world',
     },
   },
+  data() {
+    return {
+      fetchedHtml: '',
+    };
+  },
+  mounted() {
+    fetch('https://www.biggerpockets.com/shared_components/component?name=membership/dashboard/widgets/trending_topics')
+      .then(response => response.text())
+      .then(html => {
+        this.fetchedHtml = html;
+      })
+      .catch(error => {
+        console.error('Error fetching HTML:', error);
+      });
+  }
 };
 </script>
 

@@ -27,7 +27,7 @@ const REGISTERED_COMPONENTS = [
 ];
 
 // TODO: enter your public API key
-const BUILDER_PUBLIC_API_KEY = 'f1a790f8c3204b3b8c5c1795aeac4660'; // ggignore
+const BUILDER_PUBLIC_API_KEY = 'fe63f61359c84e84b5e35d491a903ea2'; // ggignore
 const content = ref<BuilderContent | null>(null);
 const canShowContent = ref(false);
 const model = 'page';
@@ -41,6 +41,7 @@ onMounted(async () => {
       urlPath: window.location.pathname,
     },
   });
+  
   canShowContent.value = content.value ? true : isPreviewing();
 });
 </script>
