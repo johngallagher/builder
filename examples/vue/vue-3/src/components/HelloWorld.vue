@@ -1,6 +1,6 @@
 <template>
   <div class="hello-world">
-    <div v-html="fetchedHtml"></div>
+    <div v-html="ftchedHtml"></div>
     <slot></slot>
   </div>
 </template>
